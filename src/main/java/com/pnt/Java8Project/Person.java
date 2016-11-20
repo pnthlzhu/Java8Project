@@ -1,5 +1,11 @@
 package com.pnt.Java8Project;
 
+/**
+ * 使用注解容器
+ * @author Administrator
+ * @date 2016年11月20日
+ */
+@Hints({@Hint("hint1"), @Hint("hint2")})
 public class Person {
 	protected String firstName;
 	protected String lastName;
