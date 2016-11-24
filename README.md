@@ -11,12 +11,14 @@ Java8新特性
 
 5.Lambda的范围
 
+6.内置函数式接口
+
+7.Streams
+
+8.Parallel Streams
+
+9.Map
+
 10.时间日期API
 
 11.Annotations
-
-12.SVN TEST
-
-13.GIT TEST
-
-pp
