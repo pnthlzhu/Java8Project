@@ -22,7 +22,7 @@ public class MethodReferenceTest {
 		Integer to = converter.convert("123");
 		assertTrue(to.intValue() == 123);
 	}
-	
+
 	/**
 	 * 引用一个对象的方法
 	 * @throws Exception
@@ -34,18 +34,30 @@ public class MethodReferenceTest {
 		String to = converter.convert("java");
 		assertTrue("j".equals(to));
 	}
-	
+
+	/**
+	 * 引用一个对象的方法(两个参数)
+	 * @throws Exception
+	 */
+	@Test
+	public void test3() throws Exception {
+		Something something = new Something();
+		TwoParamConverter<Integer, Integer, Integer> converter = something::sum;
+		Integer c = converter.convert(1, 2);
+		assertTrue(c.intValue() == 3);
+	}
+
 	/**
 	 * 引用构造函数
 	 * @throws Exception
 	 */
 	@Test
-	public void test3() throws Exception {
+	public void test4() throws Exception {
 		PersonFactory<Person> personFactory = Person::new;
 		Person person = personFactory.create("hlzhu", "pig");
 		assertTrue(person instanceof Person);
 		System.out.println(person);
-		
+
 		personFactory = Student::new;
 		person = personFactory.create("ghy", "rabbit");
 		assertTrue(person instanceof Student);
